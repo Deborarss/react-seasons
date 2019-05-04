@@ -1,22 +1,22 @@
-import "./SeasonDisplay.css";
-import React from "react";
+import './SeasonDisplay.css';
+import React from 'react';
 
 const seasonConfig = {
   verão: {
-    text: "Vamos à praia!",
-    iconName: "sun"
+    text: 'Vamos à praia!',
+    iconName: 'sun'
   },
   inverno: {
-    text: "Burr, está gelado!",
-    iconName: "snowflake"
+    text: 'Burr, está gelado!',
+    iconName: 'snowflake'
   }
 };
 
 const getSeason = (lat, month) => {
   if (month > 2 && month < 9) {
-    return lat > 0 ? "verão" : "inverno";
+    return lat > 0 ? 'verão' : 'inverno';
   } else {
-    return lat > 0 ? "inverno" : "verão";
+    return lat > 0 ? 'inverno' : 'verão';
   }
 };
 
@@ -28,7 +28,7 @@ const SeasonDisplay = props => {
   const { text, iconName } = seasonConfig[season];
 
   return (
-    <div className={`season-display ${season}`}>
+    <div className={`season-display d-flex ${season}`}>
       <i className={`icon-left massive ${iconName} icon`} />
       <h1>{text}</h1>
       <i className={`icon-right massive ${iconName} icon`} />

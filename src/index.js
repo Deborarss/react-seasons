@@ -1,10 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import SeasonDisplay from "./SeasonDisplay";
-import Spinner from "./Spinner";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import SeasonDisplay from './components/SeasonDisplay';
+import Spinner from './components/Spinner';
+import ErrorMessage from './components/ErrorMessage';
 
 class App extends React.Component {
-  state = { lat: null, errorMessage: "" };
+  state = { lat: null, errorMessage: '' };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
@@ -14,8 +15,12 @@ class App extends React.Component {
   }
 
   renderContent() {
+    const localErrMsg =
+      'Mas para saber qual temporada está, preciso da sua localização!!';
     if (this.state.errorMessage && !this.state.lat) {
-      return <div>Erro: {this.state.errorMessage}</div>;
+      return (
+        <ErrorMessage message="Isso é meio estranho..." error={localErrMsg} />
+      );
     }
 
     if (!this.state.errorMessage && this.state.lat) {
@@ -30,4 +35,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(<App />, document.querySelector('#root'));

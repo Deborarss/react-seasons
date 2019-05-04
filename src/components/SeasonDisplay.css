@@ -1,0 +1,52 @@
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.icon-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.icon-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.season-display.inverno i {
+  color: blue;
+}
+.season-display.verão i {
+  color: red;
+}
+.season-display {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.inverno {
+  background-color: aliceblue;
+}
+.verão {
+  background-color: orange;
+}
+.error-message {
+  background-color: #fff;
+  color: #3f4243;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+.error-message img {
+  background: green;
+  width: 150px;
+  -webkit-border-radius: 50%;
+  -moz--border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+}
+.green-text {
+  color: green;
+}
